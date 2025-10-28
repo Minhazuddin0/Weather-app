@@ -23,7 +23,22 @@ async function fetchWeatherDetails(){
         // handlle the error here
     }
 
+    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
    
 
     
+}
+
+async function getCustomWeatherDetails() {
+    let latitude = 15.6333;
+    let longitude = 18.3333;
+
+    let result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+
+    let data = await result.json();
+
+    console.log(data);
+
+
 }
