@@ -18,7 +18,7 @@ async function fetchWeatherDetails(){
     // newPara.textContent = `${data?.main?.temp.toFixed(2)} °C`
 
     // document.body.appendChild(newPara); 
-        
+        renderWeatherinfo(data);
     } catch (err) {
         // handlle the error here
     }
