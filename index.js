@@ -8,7 +8,7 @@ function renderWeatherinfo(data){
 
     document.body.appendChild(newPara); 
 
-
+  
 } 
 
 async function fetchWeatherDetails(){
