@@ -15,4 +15,18 @@ currentTab.classList.add("current-tab");
 
 // ek kaam pending hai ???
 
+function switchTab(clickedTab){
+    
+}
+
+
+userTab.addEventListener("click", () => {
+    // pass clicked tab as input parameter
+    switchTab(userTab);
+});
+
+searchTab.addEventListener("click", () => {
+    // pass clicked tab as input parameter
+    switchTab(searchTab);
+});
 
