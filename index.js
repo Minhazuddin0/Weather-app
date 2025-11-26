@@ -16,7 +16,15 @@ currentTab.classList.add("current-tab");
 // ek kaam pending hai ???
 
 function switchTab(clickedTab){
-    
+    if(clickedTab != currentTab){
+        currentTab.classList.remove("current-tab");
+        currentTab = clickedTab; 
+        currentTab.classList.add("current-tab");
+
+        if(!searchForm.classList.contain("sctive")) {
+            
+        }
+    }
 }
 
 
