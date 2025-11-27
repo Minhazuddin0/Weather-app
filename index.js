@@ -108,4 +108,11 @@ function renderWeatherInfo(WeatherInfo){
     const windspeed = document.querySelector("[data-windspeed]")
     const humidity = document.querySelector("[data-humidity]")
     const clouds = document.querySelector("[data-clouds]")
+
+    // fetch values from weather info object & put in UI element
+
+
+
+
+
 }
