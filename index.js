@@ -15,7 +15,7 @@ oldTab.classList.add("current-tab");
 
 // ek kaam pending hai ???
 
-function switchTab(clickedTab){
+function switchTab(new Tab){
     if(newTab != oldTab){
         oldTab.classList.remove("current-tab");
         oldTab = newTab; 
@@ -52,3 +52,24 @@ searchTab.addEventListener("click", () => {
     switchTab(searchTab);
 });
 
+
+
+// check if coordinates are already present in session storage 
+function getfromSessionStorage() {
+    const localCoordinates = sessionStorage.getItem("user-coordinnates");
+    if (! localCoordinates){
+        // agar local coordinates nahi mile 
+        grantAccesContainer.classList.add("active");
+    }
+    else{
+        const coordinates = JSON.parse(localCoordinates);
+        fetchUserWeatherInfo(coordinates);
+
+    }
+}
+
+
+function fetchUserWeatherInfo(coordinates){
+    const {lat, lon}= coordinates;
+    
+}
