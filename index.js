@@ -85,8 +85,9 @@ async function fetchUserWeatherInfo(coordinates){
 
         loadingScreen.classList.remove(active);
         userInfoContainer.classList.add("active");
+        renderWeatherInfo(data);
 
-        
+
     }
     catch(err){
 
