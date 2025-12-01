@@ -100,14 +100,14 @@ async function fetchUserWeatherInfo(coordinates){
 function renderWeatherInfo(WeatherInfo){
     // firstly we have to fetch the elements
 
-    const cityName = document.querySelector("[data-cityName]")
-    const countryIcon = document.querySelector("[data-countryIcon]")
-    const desc = document.querySelector("[data-weatherDesc]")
-    const weatherIcon = document.querySelector("[data-weatherIcon]")
-    const temp = document.querySelector("[data-temp]")
-    const windspeed = document.querySelector("[data-windspeed]")
-    const humidity = document.querySelector("[data-humidity]")
-    const clouds = document.querySelector("[data-clouds]")
+    const cityName = document.querySelector("[data-cityName]");
+    const countryIcon = document.querySelector("[data-countryIcon]");
+    const desc = document.querySelector("[data-weatherDesc]");
+    const weatherIcon = document.querySelector("[data-weatherIcon]");  
+    const temp = document.querySelector("[data-temp]");
+    const windspeed = document.querySelector("[data-windspeed]");
+    const humidity = document.querySelector("[data-humidity]");
+    const clouds = document.querySelector("[data-clouds]");
 
     // fetch values from weather info object & put in UI element
 
