@@ -146,3 +146,34 @@ function showPosition(position){
 
 const grantAccessButton = document.querySelector("data-grantAccess");
 grantAccessButton.addEventListener("click", getLocation)
+
+const searchInput = document.querySelector("[data-searchInput]");
+
+searchForm.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    let cityName = searchInput.value;
+
+    if(cityName.value === "")
+         return;
+        else
+            fetchSearchWeatherInfo(cityName);
+});
+
+async function fetchSearchWeatherInfo(city){
+    loadingScreen.classList.add("active");
+    userInfoContainer.classList.remove("active");
+    grantAccesContainer.classList.remove("active");
+
+    try{
+        const res = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric `
+        )
+
+    }
+    catch(err){
+        // HW 
+    }
+
+
+}
+
