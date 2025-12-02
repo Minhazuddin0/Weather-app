@@ -15,13 +15,13 @@ oldTab.classList.add("current-tab");
 
 // ek kaam pending hai ???
 
-function switchTab(new Tab){
+function switchTab(newTab){
     if(newTab != oldTab){
         oldTab.classList.remove("current-tab");
         oldTab = newTab; 
         oldTab.classList.add("current-tab");
 
-        if(!searchForm.classList.contain("active")) {
+        if(!searchForm.classList.contains("active")) {
             // kya search form wala is visible, if yes then make it visible 
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
@@ -31,7 +31,7 @@ function switchTab(new Tab){
             
             // main pehle search wale tab par tha, ab your weather tab visible karna hai
 
-            searchForm,classList.remove("active"); 
+            searchForm.classList.remove("active"); 
             userInfoContainer.classList.remove("active");
             
             // ab main your weather tab mai aa gya hu, to weather bho display karna pdega, so lets check local storage firt for coordinates, if we have saved them there
@@ -73,7 +73,7 @@ async function fetchUserWeatherInfo(coordinates){
     const {lat, lon}= coordinates;
     // make grant container incisible
     grantAccesContainer.classList.remove("active");
-    loadingScreen.classList.add("active");
+    loadingScreen.classList.remove("active");
 
     // api call
 
@@ -124,7 +124,7 @@ function renderWeatherInfo(weatherInfo){
 }
 
 function getLocation(){
-    if(navigator.geoLocation){
+    if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition)
     }
     else{
@@ -144,7 +144,7 @@ function showPosition(position){
 
 }
 
-const grantAccessButton = document.querySelector("data-grantAccess");
+const grantAccessButton = document.querySelector("[data-grantAccess]");
 grantAccessButton.addEventListener("click", getLocation)
 
 const searchInput = document.querySelector("[data-searchInput]");
@@ -153,7 +153,7 @@ searchForm.addEventListener("submit", (e) =>{
     e.preventDefault();
     let cityName = searchInput.value;
 
-    if(cityName.value === "")
+    if(cityName  === "")
          return;
         else
             fetchSearchWeatherInfo(cityName);
@@ -168,7 +168,7 @@ async function fetchSearchWeatherInfo(city){
         const res = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         );
-        const data = await response.json();
+        const data = await res.json();
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
         renderWeatherInfo(data);
