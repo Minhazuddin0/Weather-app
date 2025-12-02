@@ -121,7 +121,28 @@ function renderWeatherInfo(weatherInfo){
     humidity.innerText = weatherInfo?.main?.humidity;
     cloudiness.innerText = weatherInfo?.clouds?.all;
 
+}
 
+function getLocation(){
+    if(navigator.geoLocation){
+        navigator.geolocation.getCurrentPosition(showPosition)
+    }
+    else{
+        // HW - show an alert for no geolocation suppoort availabale
+    }
+}
 
+function showPosition(position){
+
+    const userCoordinates = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+    }
+
+    sessionStorage.setItem("user-coordinnates", JSON.stringify(userCoordinates));
+    fetchUserWeatherInfo(userCoordinates);
 
 }
+
+const grantAccessButton = document.querySelector("data-grantAccess");
+grantAccessButton.addEventListener("click", getLocation)
