@@ -166,11 +166,15 @@ async function fetchSearchWeatherInfo(city){
 
     try{
         const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric `
-        )
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        );
+        const data = await response.json();
+        loadingScreen.classList.remove("active");
+        userInfoContainer.classList.add("active");
+        renderWeatherInfo(data);
 
     }
-    catch(err){
+    catch( err){
         // HW 
     }
 
