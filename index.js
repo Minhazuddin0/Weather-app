@@ -97,7 +97,7 @@ async function fetchUserWeatherInfo(coordinates){
 
 }
 
-function renderWeatherInfo(WeatherInfo){
+function renderWeatherInfo(weatherInfo){
     // firstly we have to fetch the elements
 
     const cityName = document.querySelector("[data-cityName]");
@@ -111,6 +111,8 @@ function renderWeatherInfo(WeatherInfo){
 
     // fetch values from weather info object & put in UI element
 
+    cityName.innerText = weatherInfo?.name;
+    countryIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
 
 
 
