@@ -107,7 +107,7 @@ function renderWeatherInfo(weatherInfo){
     const temp = document.querySelector("[data-temp]");
     const windspeed = document.querySelector("[data-windspeed]");
     const humidity = document.querySelector("[data-humidity]");
-    const clouds = document.querySelector("[data-clouds]");
+    const cloudiness = document.querySelector("[data-cloudiness]");
 
     // fetch values from weather info object & put in UI element
 
@@ -115,6 +115,11 @@ function renderWeatherInfo(weatherInfo){
     countryIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
     desc.innerText = weatherInfo?.weather?.[0]?.description;
     weatherIcon.src = `https://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`;
+
+    temp.innerText = weatherInfo?.main?.temp;
+    windspeed.innerText = weatherInfo?.wind?.speed;
+    humidity.innerText = weatherInfo?.main?.humidity;
+    cloud
 
 
 
