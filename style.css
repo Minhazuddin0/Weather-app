@@ -68,6 +68,8 @@ h1{
     background-color: var(--colorDark2);
     cursor: pointer;
     padding: 10px 30px;
+    margin-bottom:10px;
+    
 
 }
 
@@ -78,7 +80,7 @@ h1{
 }
 
 .grant-location-container{
-    /* display: none; */
+    display: none;
 }
 
 .grant-location-container.active{
@@ -88,4 +90,38 @@ h1{
 .grant-location-container img{
     margin-bottom: 2rem;
 
+}
+
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600; 
+}
+
+.grant-location-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.1rem;
+
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform:uppercase ;
+}
+
+.user-info-container{
+    /* display: none; */
+}
+
+.user-info-container.active{
+    display: flex;
 }
