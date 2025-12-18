@@ -106,6 +106,7 @@ h1{
     display: none;
 }
 
+
 .loading-container.active{
     display: flex;
 }
